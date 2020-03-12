@@ -1,4 +1,5 @@
 import inspect
+import logging
 from contextlib import contextmanager
 
 from sentry_sdk.hub import Hub
@@ -73,6 +74,10 @@ def capture_event(
     # type: (...) -> Optional[str]
     hub = Hub.current
     if hub is not None:
+        print("Hello from sentry client")
+        print(f"Event: {event}")
+        logging.info("Hello from sentry client")
+        logging.info(f"Event: {event}")
         return hub.capture_event(event, hint, scope=scope, **scope_args)
     return None
 

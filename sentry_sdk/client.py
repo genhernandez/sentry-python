@@ -1,3 +1,4 @@
+import logging
 import os
 import uuid
 import random
@@ -302,6 +303,10 @@ class _Client(object):
 
         :returns: An event ID. May be `None` if there is no DSN set or of if the SDK decided to discard the event for other reasons. In such situations setting `debug=True` on `init()` may help.
         """
+        print("Hello from sentry client")
+        print(f"Event: {event}")
+        logging.info("Hello from sentry client")
+        logging.info(f"Event: {event}")
         if disable_capture_event.get(False):
             return None
 
