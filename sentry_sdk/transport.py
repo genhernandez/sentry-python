@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import json
+import logging
 import io
 import urllib3  # type: ignore
 import certifi
@@ -157,6 +158,9 @@ class HttpTransport(Transport):
         headers,  # type: Dict[str, str]
     ):
         # type: (...) -> None
+        logging.info("Hello from sentry")
+        logging.info(f"Headers: {headers}")
+        logging.info(f"Body: {body}")
         headers.update(
             {
                 "User-Agent": str(self._auth.client),
