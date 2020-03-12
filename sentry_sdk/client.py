@@ -307,6 +307,7 @@ class _Client(object):
         print(f"Event: {event}")
         logging.info("Hello from sentry client")
         logging.info(f"Event: {event}")
+        raise Exception
         if disable_capture_event.get(False):
             return None
 

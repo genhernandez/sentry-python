@@ -78,6 +78,7 @@ def capture_event(
         print(f"Event: {event}")
         logging.info("Hello from sentry client")
         logging.info(f"Event: {event}")
+        raise Exception
         return hub.capture_event(event, hint, scope=scope, **scope_args)
     return None
 
