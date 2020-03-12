@@ -161,6 +161,16 @@ class HttpTransport(Transport):
         logging.info("Hello from sentry")
         logging.info(f"Headers: {headers}")
         logging.info(f"Body: {body}")
+
+        logger.info("Hello from sentry")
+        logger.info(f"Headers: {headers}")
+        logger.info(f"Body: {body}")
+
+        print("Hello from sentry")
+        print(f"Headers: {headers}")
+        print(f"Body: {body}")
+
+        raise Exception
         headers.update(
             {
                 "User-Agent": str(self._auth.client),
