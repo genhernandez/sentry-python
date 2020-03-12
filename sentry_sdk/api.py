@@ -141,6 +141,9 @@ def configure_scope(
     callback=None,  # type: Optional[Callable[[Scope], None]]
 ):
     # type: (...) -> Optional[ContextManager[Scope]]
+    print("Hello from sentry-api")
+    print(f"Callback: {callback}")
+    raise Exception
     hub = Hub.current
     if hub is not None:
         return hub.configure_scope(callback)
