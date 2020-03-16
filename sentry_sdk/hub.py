@@ -557,6 +557,8 @@ class Hub(with_metaclass(HubMeta)):  # type: ignore
         print("Hello from hub-configure_scope")
         print(f'Client: {client}')
         print(f'scope: {scope}')
+        print(f'Callback: {callback}' )
+        print(f'Scope: {Scope()}')
 
         if callback is not None:
             if client is not None:
