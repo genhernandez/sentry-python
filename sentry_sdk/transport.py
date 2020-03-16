@@ -158,15 +158,7 @@ class HttpTransport(Transport):
         headers,  # type: Dict[str, str]
     ):
         # type: (...) -> None
-        logging.info("Hello from sentry")
-        logging.info(f"Headers: {headers}")
-        logging.info(f"Body: {body}")
-
-        logger.info("Hello from sentry")
-        logger.info(f"Headers: {headers}")
-        logger.info(f"Body: {body}")
-
-        print("Hello from sentry")
+        print("Hello from sentry transport -- _send_request")
         print(f"Headers: {headers}")
         print(f"Body: {body}")
 
@@ -305,7 +297,8 @@ class HttpTransport(Transport):
     ):
         # type: (...) -> None
         hub = self.hub_cls.current
-
+        print("Hello from transport -- capture_event")
+        print(f'Event: {event}')
         def send_event_wrapper():
             # type: () -> None
             with hub:

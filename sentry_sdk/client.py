@@ -303,10 +303,9 @@ class _Client(object):
 
         :returns: An event ID. May be `None` if there is no DSN set or of if the SDK decided to discard the event for other reasons. In such situations setting `debug=True` on `init()` may help.
         """
-        print("Hello from sentry client")
+        print("Hello from sentry client -- capture_event")
         print(f"Event: {event}")
-        logging.info("Hello from sentry client")
-        logging.info(f"Event: {event}")
+
         raise Exception
         if disable_capture_event.get(False):
             return None

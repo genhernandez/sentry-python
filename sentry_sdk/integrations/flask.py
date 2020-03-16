@@ -198,6 +198,7 @@ def _make_request_event_processor(app, weak_request, integration):
 
 def _capture_exception(sender, exception, **kwargs):
     # type: (Flask, Union[ValueError, BaseException], **Any) -> None
+    print("Hello from sentry - flask -- _capture_exception")
     hub = Hub.current
     if hub.get_integration(FlaskIntegration) is None:
         return

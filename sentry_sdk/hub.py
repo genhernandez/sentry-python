@@ -317,7 +317,7 @@ class Hub(with_metaclass(HubMeta)):  # type: ignore
         # type: (...) -> Optional[str]
         """Captures an event. Alias of :py:meth:`sentry_sdk.Client.capture_event`.
         """
-        print("Hello from sentry-hub")
+        print("Hello from sentry-hub -- capture_event")
         print(f'Event: {event}')
         raise Exception
         client, top_scope = self._stack[-1]
