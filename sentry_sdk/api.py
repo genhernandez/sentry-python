@@ -143,6 +143,7 @@ def configure_scope(
     # type: (...) -> Optional[ContextManager[Scope]]
     print("Hello from sentry-api")
     print(f"Callback: {callback}")
+    print(f'Hub: {Hub.current}')
     raise Exception
     hub = Hub.current
     if hub is not None:
