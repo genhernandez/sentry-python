@@ -317,6 +317,7 @@ class Hub(with_metaclass(HubMeta)):  # type: ignore
         # type: (...) -> Optional[str]
         """Captures an event. Alias of :py:meth:`sentry_sdk.Client.capture_event`.
         """
+        print("Hello from sentry-hub")
         client, top_scope = self._stack[-1]
         scope = _update_scope(top_scope, scope, scope_args)
         if client is not None:
