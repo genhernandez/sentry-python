@@ -144,9 +144,9 @@ def configure_scope(
     print("Hello from sentry-api")
     print(f"Callback: {callback}")
     print(f'Hub: {Hub.current}')
-    print(f'{hub.configure_scope(callback)}')
-    print(f'{Scope()}')
-    print(f'{inner()}')
+    print(f'{Hub.current.configure_scope(callback)}')
+    # print(f'{Scope()}')
+    # print(f'{inner()}')
     hub = Hub.current
     if hub is not None:
         return hub.configure_scope(callback)

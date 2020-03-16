@@ -318,6 +318,8 @@ class Hub(with_metaclass(HubMeta)):  # type: ignore
         """Captures an event. Alias of :py:meth:`sentry_sdk.Client.capture_event`.
         """
         print("Hello from sentry-hub")
+        print(f'Event: {event}')
+        raise Exception
         client, top_scope = self._stack[-1]
         scope = _update_scope(top_scope, scope, scope_args)
         if client is not None:
@@ -552,6 +554,10 @@ class Hub(with_metaclass(HubMeta)):  # type: ignore
         """
 
         client, scope = self._stack[-1]
+        print("Hello from hub-configure_scope")
+        print(f'Client: {client}')
+        print(f'scope: {scope}')
+
         if callback is not None:
             if client is not None:
                 callback(scope)
