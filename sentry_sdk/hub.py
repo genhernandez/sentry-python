@@ -558,7 +558,7 @@ class Hub(with_metaclass(HubMeta)):  # type: ignore
         print(f'Client: {client}')
         print(f'scope: {scope}')
         print(f'Callback: {callback}' )
-        print(f'Scope: {Scope()}')
+        # print(f'Scope: {Scope()}')
 
         if callback is not None:
             if client is not None:
@@ -572,6 +572,7 @@ class Hub(with_metaclass(HubMeta)):  # type: ignore
             if client is not None:
                 yield scope
             else:
+                print("I am yielding Scope()")
                 yield Scope()
 
         return inner()

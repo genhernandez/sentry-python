@@ -92,6 +92,7 @@ class Scope(object):
 
     def __init__(self):
         # type: () -> None
+        print("Hello from Scope")
         self._event_processors = []  # type: List[EventProcessor]
         self._error_processors = []  # type: List[ErrorProcessor]
 

@@ -74,10 +74,8 @@ def capture_event(
     # type: (...) -> Optional[str]
     hub = Hub.current
     if hub is not None:
-        print("Hello from sentry client")
+        print("Hello from sentry api - capture_even")
         print(f"Event: {event}")
-        logging.info("Hello from sentry client")
-        logging.info(f"Event: {event}")
         raise Exception
         return hub.capture_event(event, hint, scope=scope, **scope_args)
     return None
